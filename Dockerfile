@@ -11,6 +11,9 @@ RUN apt-get install -y -q mongodb
 RUN apt-get install -y -q nodejs
 RUN apt-get install -y -q npm
 
+# https://stackoverflow.com/questions/21855035/ssl-error-cert-untrusted-while-using-npm-command/21875274
+RUN npm config set strict-ssl false
+
 # ---
 
 ADD package.json /tmp/package.json
